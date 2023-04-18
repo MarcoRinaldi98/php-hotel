@@ -9,7 +9,42 @@
 
     <title>Hotel</title>
 </head>
-<body>
+<body class="bg-secondary">
+
+    <form action="index.php" method="GET" class="container-lg py-5">
+        <div class="row">
+            <div class="col-6 col-md-2 text-end">
+                <label for="parking" class="col-form-label text-white">Parcheggio</label>
+            </div>
+            <div class="col-6 col-md-2">
+                <select name="parking" id="parking" class="form-select w-75">
+                    <option value="" selected></option>
+                    <option value="true">Si</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="col-6 col-md-2 text-end pt-2 pt-md-0">
+                <label for="vote" class="col-form-label text-white">Voto</label>
+            </div>
+            <div class="col-6 col-md-2 pt-2 pt-md-0">
+                <select name="vote" id="vote" class="form-select w-75">
+                    <option value="" selected></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 text-center pt-3 pt-md-0">
+                <button type="submit" class="btn btn-dark">CERCA</button>
+                <button type="reset" class="btn btn-light">ANNULLA</button>
+            </div>
+        </div>
+    </form>
+
+
     <table class="table table-dark container-lg">
         <thead>
             <tr>
