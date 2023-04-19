@@ -7,7 +7,7 @@
     <!-- Link di collegamento al cdn di bootstrtap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Titolo -->
-    <title>Hotel</title>
+    <title> Hotel </title>
 </head>
 <body class="bg-secondary">
     <!-- FORM -->
@@ -91,12 +91,12 @@
                 ];
 
                 $parkingFilter = null;
-                if (isset($_GET['parking'])) {
+                if (!empty($_GET['parking'])) {
                     $parkingFilter = $_GET['parking'];
                 }
 
                 $voteFilter = null;
-                if (isset($_GET['vote'])) {
+                if (!empty($_GET['vote'])) {
                     $voteFilter = $_GET['vote'];
                 }
 
@@ -109,16 +109,16 @@
                     }
                 }
 
-                foreach($filteredHotels as $hotel) {
-                    echo "<tr>
-                    <th scope='row'>" . $hotel['name'] . "</th>
-                    <td>" . $hotel['description'] . "</td>
-                    <td>" . ($hotel['parking']?'Si':'No') . "</td>
-                    <td>" . $hotel['vote'] . "</td>
-                    <td>" . $hotel['distance_to_center'] . "</td>
-                    </tr>";
-                }
-            ?>
+                foreach($filteredHotels as $hotel) { ?>
+                <tr>
+                    <th scope='row'><?php echo $hotel['name'] ?></th>
+                    <td><?php echo $hotel['description'] ?></td>
+                    <td><?php echo $hotel['parking']?'Si':'No' ?></td>
+                    <td><?php echo $hotel['vote'] ?></td>
+                    <td><?php echo $hotel['distance_to_center'] ?></td>
+                </tr>
+                
+            <?php } ?>
 
         </tbody>
     </table>
